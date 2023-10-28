@@ -24,7 +24,6 @@ public class Items {
     @JoinColumn(name = "restaurantItems")
     private Restaurants restaurants;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "items")
+    @OneToOne(mappedBy = "items", fetch = FetchType.EAGER)
     private LineItems cart;
 }
