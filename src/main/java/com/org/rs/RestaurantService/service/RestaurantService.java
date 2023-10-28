@@ -32,16 +32,16 @@ public class RestaurantService {
         return restaurantsRepository.findById(id).get();
     }
 
-    public boolean createRestaurant(RestaurantUpdate restaurantCreate) {
-        if (restaurantsRepository.findById(restaurantCreate.getRestaurantId()).isPresent()) {
+    public boolean createRestaurant(RestaurantUpdate restaurantUpdate) {
+        if (restaurantsRepository.findById(restaurantUpdate.getRestaurantId()).isPresent()) {
             return false;
         }
         Restaurants rest = Restaurants.builder()
-                .address(restaurantCreate.getAddress())
-                .restaurantName(restaurantCreate.getRestaurantName())
-                .paymentInfo(restaurantCreate.getPaymentInfo())
+                .address(restaurantUpdate.getAddress())
+                .restaurantName(restaurantUpdate.getRestaurantName())
+                .paymentInfo(restaurantUpdate.getPaymentInfo())
                 .build();
-        List<Items> items = restaurantCreate.getItems().stream().map(item -> Items.builder()
+        List<Items> items = restaurantUpdate.getItems().stream().map(item -> Items.builder()
                         .itemName(item.getItemName())
                         .price(item.getPrice())
                         .restaurants(rest)
@@ -49,7 +49,7 @@ public class RestaurantService {
                 .toList();
         restaurantsRepository.save(rest);
         items.forEach(item -> itemsRepository.save(item));
-        notifyOrchestrator(restaurantCreate);
+        notifyOrchestrator(restaurantUpdate);
         return true;
     }
 
