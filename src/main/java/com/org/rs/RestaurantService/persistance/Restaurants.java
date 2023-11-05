@@ -25,9 +25,9 @@ public class Restaurants {
     @Column(name = "PAYMENT_INFO")
     private String paymentInfo;
 
-    @OneToMany(mappedBy = "restaurant")
+    @OneToMany(mappedBy = "restaurants", fetch = FetchType.LAZY)
     private List<Items> restaurantItems;
 
-    @OneToMany(mappedBy = "restaurants", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "restaurants", fetch = FetchType.LAZY)
     private List<Orders> orders;
 }

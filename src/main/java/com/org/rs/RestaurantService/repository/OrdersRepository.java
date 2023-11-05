@@ -11,8 +11,5 @@ import java.util.Optional;
 @Repository
 public interface OrdersRepository extends JpaRepository<Orders, Integer> {
 
-    @Query("SELECT o FROM ORDERS o WHERE o.RESTAURANT_ID = ?1")
-    List<Orders> findAllOrdersByRestaurantId(Integer id);
-
     Optional<Orders> findByCorrelationId(String id);
 }

@@ -24,13 +24,13 @@ public class Orders {
     @Column(name = "CORRELATION_ID")
     private String correlationId;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "orders")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "RESTAURANT_ID")
     private Restaurants restaurants;
 
     @Enumerated(EnumType.STRING)
-    private OrderStatus status;
+    private OrderStatus orderStatus;
 
-    @OneToMany(mappedBy = "order", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "orders", fetch = FetchType.LAZY)
     private List<LineItems> lineOrder;
 }

@@ -42,7 +42,7 @@ public class MessageHandler implements Processor {
             } else if (messageType.equals(MessageType.REGULAR)) {
                 Orders order = Orders.builder()
                         .correlationId(command.getCorrelationId())
-                        .status(OrderStatus.APPROVAL_PENDING)
+                        .orderStatus(OrderStatus.APPROVAL_PENDING)
                         .placedAt(command.getPlacedAt())
                         .restaurants(restaurantService.getById(command.getRestaurantId()))
                         .build();

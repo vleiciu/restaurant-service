@@ -15,7 +15,7 @@ public class MessageRouting extends RouteBuilder {
 
     @Override
     public void configure() {
-        from("kafka:%s".formatted(RESTAURANT_CHANNEL))
+        from("kafka:%s?brokers=localhost:9092".formatted(RESTAURANT_CHANNEL))
                 .routeId("restaurant-channel")
                 .process(handler);
     }

@@ -9,20 +9,21 @@ import com.org.rs.RestaurantService.persistance.Restaurants;
 import com.org.rs.RestaurantService.repository.ItemsRepository;
 import com.org.rs.RestaurantService.repository.RestaurantsRepository;
 import lombok.AllArgsConstructor;
-import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerRecord;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 import static com.org.ma.enums.Header.REQUEST;
-import static com.org.ma.utils.Constants.*;
+import static com.org.ma.utils.Constants.ORDER_CHANNEL;
+import static com.org.ma.utils.Constants.SUBJECT;
 
 @AllArgsConstructor
 @Service
 public class RestaurantService {
 
-    private KafkaProducer<String, RestaurantUpdate> producer;
+    private KafkaTemplate<String, String> producer;
 
     private RestaurantsRepository restaurantsRepository;
 
@@ -76,7 +77,7 @@ public class RestaurantService {
     }
 
     private void notifyOrchestrator(RestaurantUpdate restaurantUpdate) {
-        ProducerRecord<String, RestaurantUpdate> record = new ProducerRecord<>(ORDER_CHANNEL, MESSAGE, restaurantUpdate);
+        ProducerRecord<String, String> record = new ProducerRecord<>(ORDER_CHANNEL, restaurantUpdate.toString());
         record.headers().add(SUBJECT, "%s_%s".formatted(Subject.RESTAURANT.name(), REQUEST.name()).getBytes());
         record.headers().add(Constants.MESSAGE_TYPE, MessageType.INFO.name().getBytes());
         producer.send(record);

@@ -14,13 +14,14 @@ public class LineItems {
     @Column(name = "LINE_ID")
     private Integer lineId;
 
-    @OneToOne(mappedBy = "cart", fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "ITEM_ID")
     private Items items;
 
     @Column(name = "QUANTITY")
     private Integer quantity;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "lineOrder")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "ORDER_ID")
     private Orders orders;
 }
