@@ -1,7 +1,7 @@
-package com.org.rs.RestaurantService.service;
+package com.org.rs.service;
 
-import com.org.rs.RestaurantService.persistance.LineItems;
-import com.org.rs.RestaurantService.repository.LineItemsRepository;
+import com.org.rs.persistance.LineItems;
+import com.org.rs.repository.LineItemsRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

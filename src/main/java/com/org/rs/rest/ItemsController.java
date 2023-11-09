@@ -1,7 +1,7 @@
-package com.org.rs.RestaurantService.rest;
+package com.org.rs.rest;
 
-import com.org.rs.RestaurantService.persistance.Items;
-import com.org.rs.RestaurantService.service.RestaurantService;
+import com.org.rs.persistance.Items;
+import com.org.rs.service.RestaurantService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,8 +1,8 @@
-package com.org.rs.RestaurantService.rest;
+package com.org.rs.rest;
 
-import com.org.rs.RestaurantService.enums.OrderStatus;
-import com.org.rs.RestaurantService.persistance.Orders;
-import com.org.rs.RestaurantService.service.OrderService;
+import com.org.rs.enums.OrderStatus;
+import com.org.rs.persistance.Orders;
+import com.org.rs.service.OrderService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

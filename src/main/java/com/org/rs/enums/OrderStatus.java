@@ -1,4 +1,4 @@
-package com.org.rs.RestaurantService.enums;
+package com.org.rs.enums;
 
 import com.org.ma.enums.MessageType;
 import lombok.Getter;

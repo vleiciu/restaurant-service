@@ -1,4 +1,4 @@
-package com.org.rs.RestaurantService.config;
+package com.org.rs.config;
 
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.springframework.beans.factory.annotation.Value;

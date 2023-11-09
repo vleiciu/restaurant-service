@@ -1,6 +1,6 @@
-package com.org.rs.RestaurantService.messaging;
+package com.org.rs.messaging;
 
-import com.org.rs.RestaurantService.integration.MessageHandler;
+import com.org.rs.integration.MessageHandler;
 import lombok.AllArgsConstructor;
 import org.apache.camel.builder.RouteBuilder;
 import org.springframework.stereotype.Component;

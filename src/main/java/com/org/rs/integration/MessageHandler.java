@@ -1,14 +1,14 @@
-package com.org.rs.RestaurantService.integration;
+package com.org.rs.integration;
 
 import com.org.ma.enums.MessageType;
 import com.org.ma.model.OrderCommand;
-import com.org.rs.RestaurantService.enums.OrderStatus;
-import com.org.rs.RestaurantService.persistance.LineItems;
-import com.org.rs.RestaurantService.persistance.Orders;
-import com.org.rs.RestaurantService.service.ItemService;
-import com.org.rs.RestaurantService.service.LineItemsService;
-import com.org.rs.RestaurantService.service.OrderService;
-import com.org.rs.RestaurantService.service.RestaurantService;
+import com.org.rs.enums.OrderStatus;
+import com.org.rs.persistance.LineItems;
+import com.org.rs.persistance.Orders;
+import com.org.rs.service.ItemService;
+import com.org.rs.service.LineItemsService;
+import com.org.rs.service.OrderService;
+import com.org.rs.service.RestaurantService;
 import lombok.AllArgsConstructor;
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;

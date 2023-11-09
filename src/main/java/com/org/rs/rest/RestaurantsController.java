@@ -1,7 +1,7 @@
-package com.org.rs.RestaurantService.rest;
+package com.org.rs.rest;
 
 import com.org.ma.model.RestaurantUpdate;
-import com.org.rs.RestaurantService.service.RestaurantService;
+import com.org.rs.service.RestaurantService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;

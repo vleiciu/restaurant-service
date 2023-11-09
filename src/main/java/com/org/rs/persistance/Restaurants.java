@@ -1,4 +1,4 @@
-package com.org.rs.RestaurantService.persistance;
+package com.org.rs.persistance;
 
 import jakarta.persistence.*;
 import lombok.Builder;

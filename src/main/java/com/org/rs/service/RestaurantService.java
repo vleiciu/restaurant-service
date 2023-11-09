@@ -1,13 +1,13 @@
-package com.org.rs.RestaurantService.service;
+package com.org.rs.service;
 
 import com.org.ma.enums.MessageType;
 import com.org.ma.enums.Subject;
 import com.org.ma.model.RestaurantUpdate;
 import com.org.ma.utils.Constants;
-import com.org.rs.RestaurantService.persistance.Items;
-import com.org.rs.RestaurantService.persistance.Restaurants;
-import com.org.rs.RestaurantService.repository.ItemsRepository;
-import com.org.rs.RestaurantService.repository.RestaurantsRepository;
+import com.org.rs.persistance.Items;
+import com.org.rs.persistance.Restaurants;
+import com.org.rs.repository.ItemsRepository;
+import com.org.rs.repository.RestaurantsRepository;
 import lombok.AllArgsConstructor;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.springframework.kafka.core.KafkaTemplate;

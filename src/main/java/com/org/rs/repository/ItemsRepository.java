@@ -1,6 +1,6 @@
-package com.org.rs.RestaurantService.repository;
+package com.org.rs.repository;
 
-import com.org.rs.RestaurantService.persistance.Items;
+import com.org.rs.persistance.Items;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
